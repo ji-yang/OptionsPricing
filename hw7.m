@@ -1,0 +1,24 @@
+s = 36:1:60;
+mc1 = max(s-40,0);
+mc2 = -3 * max(s-50,0);
+mc3 = 2* max(s-55,0);
+mc = mc1+mc2+mc3;
+figure(1);
+plot(s,mc,'LineWidth', 1.5);
+xlim([36 60]);
+ylim([-5,15]);
+xlabel('Stock Price');
+ylabel('Payoff');
+title('Mary''s Payoff');
+
+pc1 = 2*max(s-55,0)-2*max(55-s,0);
+pc2 = max(s-40,0)-max(40-s,0);
+pc3 = -3*max(s-50,0)+3*max(50-s,0);
+pc = pc1+pc2+pc3;
+figure(2);
+plot(s,pc,'LineWidth', 1.5);
+xlim([36 60]);
+ylim([-5,15]);
+xlabel('Stock Price');
+ylabel('Payoff');
+title('Peter''s Payoff');
